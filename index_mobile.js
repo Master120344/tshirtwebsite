@@ -1,4 +1,4 @@
-/* script.js */
+/* index_mobile.js */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -29,14 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             this.nodes.body.classList.add('preloader-active');
             window.addEventListener('load', () => {
-                // The timeout ensures the animation is smooth even on fast connections
+                // This timeout matches the CSS transition delay for a smooth fade-out.
                 setTimeout(() => {
-                    this.nodes.preloader.style.opacity = '0';
-                    this.nodes.preloader.addEventListener('transitionend', () => {
-                        this.nodes.preloader.style.display = 'none';
-                        this.nodes.body.classList.remove('preloader-active');
-                    }, { once: true });
-                }, 1500); // Matches the CSS animation delay
+                    this.nodes.preloader.classList.add('is-hidden');
+                    this.nodes.body.classList.remove('preloader-active');
+                }, 200); // A small delay to ensure rendering before fading
             });
         },
 
@@ -73,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Triggers the initial hero text animation
         triggerHeroAnimation() {
             if (!this.nodes.hero) return;
-            // Delay slightly to ensure styles are loaded
+            // Delay slightly to ensure styles are loaded and preloader is gone
             setTimeout(() => {
                 this.nodes.hero.classList.add('is-visible');
-            }, 200);
+            }, 500); // Increased delay to happen after preloader
         },
 
         // Initializes Intersection Observer for scroll-triggered animations
@@ -88,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (entry.isIntersecting) {
                         const delay = entry.target.dataset.animationDelay;
                         if (delay) {
-                            entry.target.style.transitionDelay = delay;
+                            entry.target.style.transitionDelay = `${delay}s`;
                         }
                         entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
