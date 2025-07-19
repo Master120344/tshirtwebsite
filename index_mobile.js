@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const toggleMobileNav = () => {
-        hamburgerBtn.classList.toggle('is-active');
-        mobileNav.classList.toggle('is-active');
-        document.body.style.overflow = mobileNav.classList.contains('is-active') ? 'hidden' : 'auto';
+        const isNavActive = mobileNav.classList.contains('is-active');
+        hamburgerBtn.classList.toggle('is-active', !isNavActive);
+        mobileNav.classList.toggle('is-active', !isNavActive);
+        document.body.style.overflow = !isNavActive ? 'hidden' : 'auto';
     };
 
     const handleMobileNavClick = (e) => {
@@ -25,21 +26,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    const intersectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add('is-visible');
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
             }
         });
-    }, {
-        threshold: 0.1
+    };
+
+    window.addEventListener('scroll', () => {
+        handleHeaderScroll();
+        handleScrollAnimation();
     });
 
-    scrollElements.forEach(el => {
-        intersectionObserver.observe(el);
-    });
-
-    window.addEventListener('scroll', handleHeaderScroll);
     hamburgerBtn.addEventListener('click', toggleMobileNav);
     mobileNav.addEventListener('click', handleMobileNavClick);
 
@@ -48,11 +58,19 @@ document.addEventListener('DOMContentLoaded', function() {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const input = newsletterForm.querySelector('.newsletter-input');
+            const button = newsletterForm.querySelector('button');
+
             if (input.value && input.checkValidity()) {
-                alert(`Thank you for subscribing, ${input.value}!`);
+                button.textContent = 'Thank You!';
                 input.value = '';
+                setTimeout(() => {
+                    button.textContent = 'Subscribe';
+                }, 3000);
             } else {
-                alert('Please enter a valid email address.');
+                button.textContent = 'Invalid Email';
+                 setTimeout(() => {
+                    button.textContent = 'Subscribe';
+                }, 2000);
             }
         });
     }
@@ -66,5 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
+    
+    // Initial check for animations on page load
+    handleScrollAnimation();
 });
