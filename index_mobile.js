@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 document.querySelector('.hero')?.classList.add('is-visible');
-            }, 100);
+            }, 200);
         },
 
         handlePreloader() {
@@ -19,11 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('preloader-active');
 
             window.addEventListener('load', () => {
-                preloader.addEventListener('transitionend', () => {
-                    body.classList.remove('preloader-active');
-                }, { once: true });
-                
-                setTimeout(() => preloader.classList.add('is-hidden'), 1500);
+                setTimeout(() => {
+                    if (preloader) {
+                        preloader.addEventListener('animationend', () => {
+                           body.classList.remove('preloader-active');
+                        });
+                    }
+                }, 1800);
             });
         },
 
@@ -50,17 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
         handleHeaderScroll() {
             const header = document.querySelector('.header');
             if (!header) return;
+            let lastScrollY = window.scrollY;
 
             const scrollObserver = new IntersectionObserver(
                 ([entry]) => {
-                    header.classList.toggle('is-scrolled', !entry.isIntersecting);
-                },
-                { rootMargin: "100px 0px 0px 0px", threshold: 0 }
+                    header.classList.toggle('is-scrolled', !entry.isIntersecting && window.scrollY > 0);
+                }, {
+                    rootMargin: "0px",
+                    threshold: 1.0
+                }
             );
-
-            const elementToObserve = document.querySelector('.hero') || document.querySelector('.main-content');
-            if (elementToObserve) {
-                scrollObserver.observe(elementToObserve);
+            
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                 scrollObserver.observe(heroSection);
             }
         },
 
@@ -81,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, {
                 threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+                rootMargin: '0px 0px -80px 0px'
             });
 
             animatedElements.forEach(element => observer.observe(element));
@@ -91,12 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const slider = document.querySelector('.testimonial-slider');
             if (!slider) return;
 
+            const wrapper = slider.querySelector('.testimonial-slider__wrapper');
             const slides = slider.querySelectorAll('.testimonial-slide');
             const prevButton = slider.querySelector('.slider-btn--prev');
             const nextButton = slider.querySelector('.slider-btn--next');
             let currentIndex = 0;
 
             function updateSlider() {
+                const activeSlide = slides[currentIndex];
+                wrapper.style.height = `${activeSlide.offsetHeight}px`;
+                
                 slides.forEach((slide, index) => {
                     slide.classList.toggle('is-active', index === currentIndex);
                 });
@@ -112,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateSlider();
             });
 
+            window.addEventListener('resize', updateSlider);
             updateSlider();
         }
     };
