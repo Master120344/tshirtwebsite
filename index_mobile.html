@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Dreamz - Define Your Canvas</title>
+    <title>Custom Dreamz - Premium Custom Apparel & Design</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -17,10 +17,10 @@
 
     <div class="nav-overlay">
         <nav class="nav-overlay__menu">
-            <a href="#featured-collection" class="nav-overlay__link"><span>Collection</span></a>
-            <a href="#community" class="nav-overlay__link"><span>Community</span></a>
-            <a href="#philosophy" class="nav-overlay__link"><span>Philosophy</span></a>
-            <a href="#" class="nav-overlay__link"><span>Journal</span></a>
+            <a href="#apparel-selection" class="nav-overlay__link"><span>Create</span></a>
+            <a href="#community" class="nav-overlay__link"><span>Gallery</span></a>
+            <a href="#quality" class="nav-overlay__link"><span>Our Quality</span></a>
+            <a href="#" class="nav-overlay__link"><span>Contact</span></a>
         </nav>
         <div class="nav-overlay__footer">
             <a href="#">Account</a>
@@ -29,7 +29,18 @@
     </div>
 
     <header class="header">
-        <a href="#" class="header__logo">CD</a>
+        <a href="#" class="header__logo" aria-label="Custom Dreamz Home">
+            <svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                <defs>
+                    <filter id="ink-splatter" x="-20%" y="-20%" width="140%" height="140%">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" result="turbulence"/>
+                        <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+                    </filter>
+                </defs>
+                <text x="0" y="22" class="logo-text">Custom Dreamz</text>
+                <text x="115" y="22" class="logo-text-splatter" filter="url(#ink-splatter)">Dreamz</text>
+            </svg>
+        </a>
         <button class="header__menu-toggle" aria-label="Toggle Menu">
             <span class="hamburger"></span>
         </button>
@@ -38,111 +49,196 @@
     <main class="main-content">
 
         <section class="hero">
-            <div class="hero__video-background">
-                <video playsinline autoplay muted loop poster="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=800&auto=format&fit=crop">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-man-walking-in-a-dark-and-moody-scenery-43533-large.mp4" type="video/mp4">
-                </video>
+            <div class="hero__image-background">
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1964&auto=format&fit=crop" alt="Group of people wearing custom designed t-shirts">
             </div>
             <div class="hero__content">
                 <h1 class="hero__title">
-                    <span class="line" data-animate-line><span>Define Your</span></span>
-                    <span class="line" data-animate-line><span>Canvas</span></span>
+                    <span class="line" data-animate-line><span>Your Vision.</span></span>
+                    <span class="line" data-animate-line><span>Your Apparel.</span></span>
                 </h1>
                 <p class="hero__subtitle" data-animate="fade-up">
-                    Uncompromising quality. Unconventional design. Apparel for the modern creator.
+                    Create premium, custom-designed t-shirts and hoodies with our intuitive design studio. Unmatched quality for your brand, event, or unique idea.
                 </p>
+                <div class="hero__cta-container" data-animate="fade-up" data-animation-delay="0.3">
+                    <a href="#apparel-selection" class="btn btn--primary">Start Your Design</a>
+                </div>
             </div>
-            <a href="#featured-collection" class="hero__scroll-down" aria-label="Scroll down">
-                <div class="arrow"></div>
-            </a>
         </section>
 
-        <section class="featured-collection" id="featured-collection">
+        <section class="how-it-works">
             <div class="container">
                 <div class="section-header" data-animate="fade-up">
-                    <h2 class="section-header__title">Featured Collection</h2>
-                    <p class="section-header__subtitle">Core pieces, designed for a life in motion.</p>
+                    <h2 class="section-header__title">Create in 3 Easy Steps</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card" data-animate="fade-up">
+                        <div class="step-card__icon">01</div>
+                        <h3 class="step-card__title">Select Your Apparel</h3>
+                        <p class="step-card__description">Choose from our curated collection of premium, soft-touch t-shirts, hoodies, and more.</p>
+                    </div>
+                    <div class="step-card" data-animate="fade-up" data-animation-delay="0.2">
+                        <div class="step-card__icon">02</div>
+                        <h3 class="step-card__title">Unleash Your Creativity</h3>
+                        <p class="step-card__description">Upload your own artwork or use our design studio to bring your unique vision to life.</p>
+                    </div>
+                    <div class="step-card" data-animate="fade-up" data-animation-delay="0.4">
+                        <div class="step-card__icon">03</div>
+                        <h3 class="step-card__title">Receive & Share</h3>
+                        <p class="step-card__description">We'll print and ship your custom creation directly to you, ready to wear and wow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="apparel-selection" id="apparel-selection">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <h2 class="section-header__title">Choose Your Canvas</h2>
+                    <p class="section-header__subtitle">Every great design starts with a superior foundation.</p>
                 </div>
 
                 <div class="collection-grid">
                     <div class="collection-item" data-animate="fade-up">
                         <div class="collection-item__image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1620799140408-7c6a0a0d25d7?q=80&w=800&auto=format&fit=crop" alt="Cloud Comfort Hoodie">
+                            <img src="https://i.imgur.com/8Q5ZJ8N.png" alt="High-quality blank white t-shirt for customization">
                         </div>
                         <div class="collection-item__info">
-                            <h3 class="collection-item__name">Cloud Comfort Hoodie</h3>
-                            <p class="collection-item__price">$129.00</p>
-                            <a href="#" class="btn btn--secondary">View Details</a>
+                            <h3 class="collection-item__name">The Essential Tee</h3>
+                            <p class="collection-item__desc">A timeless, ultra-soft crewneck that serves as the perfect backdrop for any design.</p>
+                            <a href="#" class="btn btn--secondary">Customize This</a>
                         </div>
                     </div>
 
                     <div class="collection-item" data-animate="fade-up" data-animation-delay="0.2">
                         <div class="collection-item__image-wrapper">
-                             <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop" alt="Onyx Heavyweight Tee">
+                             <img src="https://i.imgur.com/xI14p8s.png" alt="High-quality blank black hoodie for customization">
                         </div>
                         <div class="collection-item__info">
-                            <h3 class="collection-item__name">Onyx Heavyweight Tee</h3>
-                            <p class="collection-item__price">$55.00</p>
-                            <a href="#" class="btn btn--secondary">View Details</a>
+                            <h3 class="collection-item__name">The Legacy Hoodie</h3>
+                            <p class="collection-item__desc">A heavyweight, premium fleece hoodie engineered for comfort, durability, and vibrant prints.</p>
+                            <a href="#" class="btn btn--secondary">Customize This</a>
                         </div>
                     </div>
                 </div>
-
-                 <div class="view-all-container" data-animate="fade-up">
-                    <a href="#" class="btn btn--primary">Shop The Full Collection</a>
+            </div>
+        </section>
+        
+        <section class="design-studio-showcase">
+            <div class="container" data-animate="fade-up">
+                 <div class="section-header">
+                    <h2 class="section-header__title">Intuitive Design Studio</h2>
+                    <p class="section-header__subtitle">All the tools you need. None of the clutter.</p>
+                </div>
+                <div class="studio-mockup">
+                    <img src="https://i.imgur.com/aC5A7h7.png" alt="Mockup of a design studio interface showing a t-shirt being customized" class="studio-mockup__image">
+                    <div class="feature-hotspot" style="top: 25%; left: 10%;">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-label">Live 3D Preview</div>
+                    </div>
+                     <div class="feature-hotspot" style="top: 55%; left: 8%;">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-label">Upload Any Artwork</div>
+                    </div>
+                    <div class="feature-hotspot" style="top: 30%; right: 9%;">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-label">Rich Text & Font Library</div>
+                    </div>
+                    <div class="feature-hotspot" style="top: 60%; right: 5%;">
+                        <div class="hotspot-pulse"></div>
+                        <div class="hotspot-label">Unlimited Color Palette</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="manifesto" id="philosophy">
-            <div class="container" data-animate="fade-up">
-                <h3 class="manifesto__eyebrow">Our Philosophy</h3>
-                <p class="manifesto__text">
-                    Engineered for the outliers. The ones who build, create, and refuse to stand still. This is more than apparel—it's an extension of your craft.
-                </p>
+        <section class="quality" id="quality">
+            <div class="container">
+                 <div class="quality-grid">
+                    <div class="quality__image-container" data-animate="fade-up">
+                        <img src="https://images.unsplash.com/photo-1620799140408-7c6a0a0d25d7?q=80&w=800&auto=format&fit=crop" alt="Close-up on the fabric of a premium hoodie">
+                    </div>
+                    <div class="quality__content" data-animate="fade-up" data-animation-delay="0.2">
+                        <h3 class="quality__eyebrow">Uncompromising Standards</h3>
+                        <h2 class="quality__title">More Than Apparel. It's Art.</h2>
+                        <p class="quality__description">We believe your designs deserve to be showcased on apparel that feels as good as it looks. That's why we obsess over every detail, from ethically sourced cotton to eco-friendly inks that produce vibrant, durable prints.</p>
+                        <ul class="quality__list">
+                            <li><span class="check-icon">✓</span> Premium, Soft-Washed Fabrics</li>
+                            <li><span class="check-icon">✓</span> Eco-Friendly, Water-Based Inks</li>
+                            <li><span class="check-icon">✓</span> Rigorous Quality Control</li>
+                        </ul>
+                         <a href="#" class="btn btn--secondary">Learn More About Our Process</a>
+                    </div>
+                </div>
             </div>
         </section>
+
 
         <section class="community" id="community">
              <div class="container">
                 <div class="section-header" data-animate="fade-up">
                     <h2 class="section-header__title">From The Community</h2>
+                    <p class="section-header__subtitle">See what our creators are making.</p>
                 </div>
                 <div class="community-grid">
                     <div class="community-card" data-animate="fade-up">
-                        <p class="community-card__text">"The quality is next level. You can feel the difference the moment you put it on. My go-to for essentials."</p>
-                        <cite class="community-card__author">- Alex R.</cite>
+                        <div class="community-card__image">
+                             <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=800&auto=format&fit=crop" alt="Customer wearing a custom designed t-shirt">
+                        </div>
+                        <div class="community-card__content">
+                             <p class="community-card__text">"The entire process was seamless, and the final product blew me away. The hoodie is my new favorite piece of clothing."</p>
+                            <cite class="community-card__author">- Alex R. | @alexcreates</cite>
+                        </div>
                     </div>
-                    <div class="community-card" data-animate="fade-up" data-animation-delay="0.2">
-                         <p class="community-card__text">"Finally, a brand that gets both aesthetics and comfort right. The heavyweight tee is a masterpiece."</p>
-                        <cite class="community-card__author">- Jasmine K.</cite>
+                     <div class="community-card" data-animate="fade-up"  data-animation-delay="0.2">
+                        <div class="community-card__image">
+                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Customer wearing a custom designed hoodie">
+                        </div>
+                        <div class="community-card__content">
+                            <p class="community-card__text">"Finally, a service that delivers on quality. The print is sharp, the tee is incredibly soft, and I got my order super fast."</p>
+                            <cite class="community-card__author">- Jasmine K. | @designsbyjas</cite>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
-            <div class="container" data-animate="fade-up">
-                <div class="footer__main">
-                    <h3 class="footer__title">Join The Inner Circle</h3>
-                    <p class="footer__subtitle">Receive early access, private sales, and 15% off your first order.</p>
+            <div class="container">
+                <div class="footer__main" data-animate="fade-up">
+                    <h3 class="footer__title">Become an Insider</h3>
+                    <p class="footer__subtitle">Get exclusive access to new products, design tips, and 15% off your first order.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address" class="newsletter-form__input">
-                        <button type="submit" class="newsletter-form__button" aria-label="Subscribe">→</button>
+                        <input type="email" placeholder="Enter your email" class="newsletter-form__input">
+                        <button type="submit" class="newsletter-form__button" aria-label="Subscribe">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
                     </form>
                 </div>
-                <div class="footer__bottom">
+                <div class="footer__bottom" data-animate="fade-up" data-animation-delay="0.2">
                     <div class="footer__links">
-                        <a href="#">Support</a>
-                        <a href="#">Returns</a>
-                        <a href="#">Terms of Service</a>
+                        <div class="footer-col">
+                            <h4 class="footer-col__title">Navigate</h4>
+                            <a href="#" class="footer-col__link">Home</a>
+                            <a href="#apparel-selection" class="footer-col__link">Start Creating</a>
+                            <a href="#community" class="footer-col__link">Community Gallery</a>
+                        </div>
+                         <div class="footer-col">
+                            <h4 class="footer-col__title">Support</h4>
+                            <a href="#" class="footer-col__link">Help Center</a>
+                            <a href="#" class="footer-col__link">Returns</a>
+                            <a href="#" class="footer-col__link">Contact Us</a>
+                            <a href="#" class="footer-col__link">Terms of Service</a>
+                        </div>
                     </div>
-                    <div class="footer__socials">
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="TikTok">TT</a>
-                        <a href="#" aria-label="Twitter">X</a>
+                    <div class="footer__socials-and-copyright">
+                        <div class="footer__socials">
+                            <a href="#" aria-label="Instagram">Instagram</a>
+                            <a href="#" aria-label="TikTok">TikTok</a>
+                            <a href="#" aria-label="Twitter">X</a>
+                        </div>
+                        <p class="footer__copyright">© 2025 Custom Dreamz. All Rights Reserved.</p>
                     </div>
-                    <p class="footer__copyright">© 2025 Custom Dreamz. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
