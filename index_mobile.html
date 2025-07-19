@@ -17,9 +17,8 @@
 
     <div class="nav-overlay">
         <nav class="nav-overlay__menu">
-            <a href="#featured-products" class="nav-overlay__link"><span>Featured</span></a>
-            <a href="#lookbook" class="nav-overlay__link"><span>Lookbook</span></a>
-            <a href="#" class="nav-overlay__link"><span>Collections</span></a>
+            <a href="#featured-collection" class="nav-overlay__link"><span>Collection</span></a>
+            <a href="#community" class="nav-overlay__link"><span>Community</span></a>
             <a href="#" class="nav-overlay__link"><span>Our Story</span></a>
             <a href="#" class="nav-overlay__link"><span>Journal</span></a>
         </nav>
@@ -30,7 +29,7 @@
     </div>
 
     <header class="header">
-        <a href="#" class="header__logo">Custom Dreamz</a>
+        <a href="#" class="header__logo">CD</a>
         <button class="header__menu-toggle" aria-label="Toggle Menu">
             <span class="hamburger"></span>
         </button>
@@ -52,86 +51,67 @@
                 <p class="hero__subtitle" data-animate="fade-up">
                     Uncompromising quality. Unconventional design. Apparel for the modern creator.
                 </p>
-                <div class="hero__cta" data-animate="fade-up" data-animation-delay="0.4">
-                    <a href="#featured-products" class="btn btn--primary">Explore The Latest</a>
+            </div>
+            <a href="#featured-collection" class="hero__scroll-down" aria-label="Scroll down">
+                <div class="arrow"></div>
+            </a>
+        </section>
+
+        <section class="featured-collection" id="featured-collection">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <h2 class="section-header__title">Featured Collection</h2>
+                    <p class="section-header__subtitle">Core pieces, designed for a life in motion.</p>
+                </div>
+
+                <div class="collection-item" data-animate="fade-up">
+                    <div class="collection-item__image">
+                        <img src="https://images.unsplash.com/photo-1620799140408-7c6a0a0d25d7?q=80&w=800&auto=format&fit=crop" alt="Cloud Comfort Hoodie">
+                    </div>
+                    <div class="collection-item__info">
+                        <h3 class="collection-item__name">Cloud Comfort Hoodie</h3>
+                        <p class="collection-item__price">$129.00</p>
+                        <a href="#" class="btn btn--secondary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-animate="fade-up">
+                    <div class="collection-item__image">
+                         <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop" alt="Onyx Heavyweight Tee">
+                    </div>
+                    <div class="collection-item__info">
+                        <h3 class="collection-item__name">Onyx Heavyweight Tee</h3>
+                        <p class="collection-item__price">$55.00</p>
+                        <a href="#" class="btn btn--secondary">View Details</a>
+                    </div>
+                </div>
+                 <div class="view-all-container" data-animate="fade-up">
+                    <a href="#" class="btn btn--primary">Shop The Full Collection</a>
                 </div>
             </div>
         </section>
 
-        <section class="featured-products" id="featured-products">
+        <section class="manifesto">
             <div class="container" data-animate="fade-up">
-                <div class="section-header">
-                    <h2 class="section-header__title">Core Essentials</h2>
-                    <p class="section-header__subtitle">The foundation of a versatile wardrobe.</p>
-                </div>
-
-                <div class="product-showcase">
-                    <div class="product-card">
-                        <a href="#" class="product-card__image-link">
-                            <img src="https://images.unsplash.com/photo-1620799140408-7c6a0a0d25d7?q=80&w=800&auto=format&fit=crop" alt="Cloud Comfort Hoodie">
-                        </a>
-                        <div class="product-card__info">
-                            <div>
-                                <h3 class="product-card__name">Cloud Comfort Hoodie</h3>
-                                <p class="product-card__price">$129.00</p>
-                            </div>
-                            <div class="product-card__arrow">→</div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-card__image-link">
-                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop" alt="Onyx Heavyweight Tee">
-                        </a>
-                        <div class="product-card__info">
-                           <div>
-                                <h3 class="product-card__name">Onyx Heavyweight Tee</h3>
-                                <p class="product-card__price">$55.00</p>
-                           </div>
-                           <div class="product-card__arrow">→</div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="view-all-container">
-                    <a href="#" class="btn btn--secondary">Shop All Essentials</a>
-                </div>
+                <p class="manifesto__text">
+                    Engineered for the outliers. The ones who build, create, and refuse to stand still. This is more than apparel—it's an extension of your craft.
+                </p>
             </div>
         </section>
 
-        <section class="lookbook" id="lookbook">
-            <div class="lookbook__image-container" data-animate="fade-in">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" alt="A man in stylish clothing looking directly at the camera.">
-            </div>
-            <div class="lookbook__content" data-animate="fade-up">
-                <h3 class="lookbook__pre-title">Seasonal Edit</h3>
-                <h2 class="lookbook__title">The Art Of Layering</h2>
-                <p class="lookbook__description">Discover curated looks that blend form and function, designed for the dynamic rhythm of city life. Explore styles that speak volumes.</p>
-                <a href="#" class="btn btn--secondary">Explore The Lookbook</a>
-            </div>
-        </section>
-
-        <section class="testimonials">
-             <div class="container" data-animate="fade-up">
-                <div class="section-header">
+        <section class="community" id="community">
+             <div class="container">
+                <div class="section-header" data-animate="fade-up">
                     <h2 class="section-header__title">From The Community</h2>
                 </div>
-                <div class="testimonial-slider">
-                    <div class="testimonial-slider__wrapper">
-                        <div class="testimonial-slide is-active">
-                            <p class="testimonial-slide__text">"The quality is next level. You can feel the difference the moment you put it on. My go-to for essentials."</p>
-                            <cite class="testimonial-slide__author">- Alex R. / Verified Buyer</cite>
-                        </div>
-                        <div class="testimonial-slide">
-                            <p class="testimonial-slide__text">"Finally, a brand that gets both aesthetics and comfort right. The heavyweight tee is a masterpiece."</p>
-                            <cite class="testimonial-slide__author">- Jasmine K. / Verified Buyer</cite>
-                        </div>
-                        <div class="testimonial-slide">
-                            <p class="testimonial-slide__text">"I get asked about my hoodie constantly. The fit and fabric are just perfect. Worth every penny."</p>
-                            <cite class="testimonial-slide__author">- Marcus L. / Verified Buyer</cite>
-                        </div>
+                <div class="community-grid">
+                    <div class="community-card" data-animate="fade-up">
+                        <p class="community-card__text">"The quality is next level. You can feel the difference the moment you put it on. My go-to for essentials."</p>
+                        <cite class="community-card__author">- Alex R.</cite>
                     </div>
-                    <div class="testimonial-slider__controls">
-                        <button class="slider-btn slider-btn--prev" aria-label="Previous Testimonial">‹</button>
-                        <button class="slider-btn slider-btn--next" aria-label="Next Testimonial">›</button>
+                    <div class="community-card" data-animate="fade-up" data-animation-delay="0.2">
+                         <p class="community-card__text">"Finally, a brand that gets both aesthetics and comfort right. The heavyweight tee is a masterpiece."</p>
+                        <cite class="community-card__author">- Jasmine K.</cite>
                     </div>
                 </div>
             </div>
@@ -140,13 +120,11 @@
         <footer class="footer">
             <div class="container" data-animate="fade-up">
                 <div class="footer__main">
-                    <h3 class="footer__title">Stay Ahead</h3>
-                    <p class="footer__subtitle">Join the inner circle for early access, private sales, and 15% off your first order.</p>
+                    <h3 class="footer__title">Join The Inner Circle</h3>
+                    <p class="footer__subtitle">Receive early access, private sales, and 15% off your first order.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" class="newsletter-form__input">
-                        <button type="submit" class="newsletter-form__button" aria-label="Subscribe">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                        </button>
+                        <input type="email" placeholder="Your Email Address" class="newsletter-form__input">
+                        <button type="submit" class="newsletter-form__button" aria-label="Subscribe">→</button>
                     </form>
                 </div>
                 <div class="footer__bottom">
@@ -158,7 +136,7 @@
                     <div class="footer__socials">
                         <a href="#" aria-label="Instagram">IG</a>
                         <a href="#" aria-label="TikTok">TT</a>
-                        <a href="#" aria-label="Twitter">TW</a>
+                        <a href="#" aria-label="Twitter">X</a>
                     </div>
                     <p class="footer__copyright">© 2025 Custom Dreamz</p>
                 </div>
