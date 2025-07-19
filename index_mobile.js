@@ -1,15 +1,6 @@
-/**
- * Custom Dreamz Mobile Application Script
- *
- * This script handles all client-side interactivity for the mobile experience,
- * including preloading, navigation, animations, and sliders.
- */
 document.addEventListener('DOMContentLoaded', () => {
 
     const App = {
-        /**
-         * Initializes all components of the application.
-         */
         init() {
             this.handlePreloader();
             this.handleNavigation();
@@ -17,15 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
             this.initScrollAnimations();
             this.initTestimonialSlider();
 
-            // Animate hero content on load
             setTimeout(() => {
                 document.querySelector('.hero')?.classList.add('is-visible');
             }, 100);
         },
 
-        /**
-         * Hides the preloader once the window is fully loaded.
-         */
         handlePreloader() {
             const preloader = document.querySelector('.preloader');
             const body = document.body;
@@ -36,15 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     body.classList.remove('preloader-active');
                 }, { once: true });
                 
-                // The preloader has a CSS animation, we wait for it to finish
-                // and then add a class to fade it out smoothly.
                 setTimeout(() => preloader.classList.add('is-hidden'), 1500);
             });
         },
 
-        /**
-         * Manages the main navigation overlay toggle and state.
-         */
         handleNavigation() {
             const menuToggle = document.querySelector('.header__menu-toggle');
             const body = document.body;
@@ -65,31 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         },
 
-        /**
-         * Adds a background to the header when the user scrolls down.
-         */
         handleHeaderScroll() {
             const header = document.querySelector('.header');
             if (!header) return;
 
             const scrollObserver = new IntersectionObserver(
                 ([entry]) => {
-                    // Toggles class based on whether the hero top is NOT intersecting (i.e., scrolled past)
                     header.classList.toggle('is-scrolled', !entry.isIntersecting);
                 },
                 { rootMargin: "100px 0px 0px 0px", threshold: 0 }
             );
 
-            // Observe the top of the hero section or main content
             const elementToObserve = document.querySelector('.hero') || document.querySelector('.main-content');
             if (elementToObserve) {
                 scrollObserver.observe(elementToObserve);
             }
         },
 
-        /**
-         * Initializes the Intersection Observer for all scroll-triggered animations.
-         */
         initScrollAnimations() {
             const animatedElements = document.querySelectorAll('[data-animate]');
             if (!animatedElements.length) return;
@@ -113,9 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             animatedElements.forEach(element => observer.observe(element));
         },
 
-        /**
-         * Manages the testimonial slider functionality.
-         */
         initTestimonialSlider() {
             const slider = document.querySelector('.testimonial-slider');
             if (!slider) return;
@@ -141,11 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateSlider();
             });
 
-            updateSlider(); // Set initial state
+            updateSlider();
         }
     };
 
-    // Run the application
     App.init();
 
 });
