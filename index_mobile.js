@@ -6,27 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
             this.handleNavigation();
             this.handleHeaderScroll();
             this.initScrollAnimations();
-            this.initTestimonialSlider();
 
             setTimeout(() => {
-                document.querySelector('.hero')?.classList.add('is-visible');
-            }, 200);
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.classList.add('is-visible');
+                }
+            }, 100);
         },
 
         handlePreloader() {
             const preloader = document.querySelector('.preloader');
             const body = document.body;
-            body.classList.add('preloader-active');
 
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    if (preloader) {
-                        preloader.addEventListener('animationend', () => {
-                           body.classList.remove('preloader-active');
-                        });
-                    }
-                }, 1800);
-            });
+            if (preloader) {
+                body.classList.add('preloader-active');
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                         preloader.addEventListener('animationend', () => {
+                            body.classList.remove('preloader-active');
+                        }, { once: true });
+                        preloader.classList.add('is-hidden');
+                    }, 1500);
+                });
+            }
         },
 
         handleNavigation() {
@@ -52,21 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         handleHeaderScroll() {
             const header = document.querySelector('.header');
             if (!header) return;
+
             let lastScrollY = window.scrollY;
 
-            const scrollObserver = new IntersectionObserver(
-                ([entry]) => {
-                    header.classList.toggle('is-scrolled', !entry.isIntersecting && window.scrollY > 0);
-                }, {
-                    rootMargin: "0px",
-                    threshold: 1.0
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('is-scrolled');
+                } else {
+                    header.classList.remove('is-scrolled');
                 }
-            );
-            
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                 scrollObserver.observe(heroSection);
-            }
+                lastScrollY = window.scrollY;
+            });
         },
 
         initScrollAnimations() {
@@ -86,43 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, {
                 threshold: 0.1,
-                rootMargin: '0px 0px -80px 0px'
+                rootMargin: '0px 0px -50px 0px'
             });
 
             animatedElements.forEach(element => observer.observe(element));
-        },
-
-        initTestimonialSlider() {
-            const slider = document.querySelector('.testimonial-slider');
-            if (!slider) return;
-
-            const wrapper = slider.querySelector('.testimonial-slider__wrapper');
-            const slides = slider.querySelectorAll('.testimonial-slide');
-            const prevButton = slider.querySelector('.slider-btn--prev');
-            const nextButton = slider.querySelector('.slider-btn--next');
-            let currentIndex = 0;
-
-            function updateSlider() {
-                const activeSlide = slides[currentIndex];
-                wrapper.style.height = `${activeSlide.offsetHeight}px`;
-                
-                slides.forEach((slide, index) => {
-                    slide.classList.toggle('is-active', index === currentIndex);
-                });
-            }
-
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlider();
-            });
-
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateSlider();
-            });
-
-            window.addEventListener('resize', updateSlider);
-            updateSlider();
         }
     };
 
