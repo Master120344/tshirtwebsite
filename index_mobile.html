@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Dreamz - Define Your Canvas</title>
-    <link rel="stylesheet" href="index_mobile.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
         <nav class="nav-overlay__menu">
             <a href="#featured-collection" class="nav-overlay__link"><span>Collection</span></a>
             <a href="#community" class="nav-overlay__link"><span>Community</span></a>
-            <a href="#" class="nav-overlay__link"><span>Our Story</span></a>
+            <a href="#philosophy" class="nav-overlay__link"><span>Philosophy</span></a>
             <a href="#" class="nav-overlay__link"><span>Journal</span></a>
         </nav>
         <div class="nav-overlay__footer">
@@ -64,35 +64,39 @@
                     <p class="section-header__subtitle">Core pieces, designed for a life in motion.</p>
                 </div>
 
-                <div class="collection-item" data-animate="fade-up">
-                    <div class="collection-item__image">
-                        <img src="https://images.unsplash.com/photo-1620799140408-7c6a0a0d25d7?q=80&w=800&auto=format&fit=crop" alt="Cloud Comfort Hoodie">
+                <div class="collection-grid">
+                    <div class="collection-item" data-animate="fade-up">
+                        <div class="collection-item__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1620799140408-7c6a0a0d25d7?q=80&w=800&auto=format&fit=crop" alt="Cloud Comfort Hoodie">
+                        </div>
+                        <div class="collection-item__info">
+                            <h3 class="collection-item__name">Cloud Comfort Hoodie</h3>
+                            <p class="collection-item__price">$129.00</p>
+                            <a href="#" class="btn btn--secondary">View Details</a>
+                        </div>
                     </div>
-                    <div class="collection-item__info">
-                        <h3 class="collection-item__name">Cloud Comfort Hoodie</h3>
-                        <p class="collection-item__price">$129.00</p>
-                        <a href="#" class="btn btn--secondary">View Details</a>
+
+                    <div class="collection-item" data-animate="fade-up" data-animation-delay="0.2">
+                        <div class="collection-item__image-wrapper">
+                             <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop" alt="Onyx Heavyweight Tee">
+                        </div>
+                        <div class="collection-item__info">
+                            <h3 class="collection-item__name">Onyx Heavyweight Tee</h3>
+                            <p class="collection-item__price">$55.00</p>
+                            <a href="#" class="btn btn--secondary">View Details</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="collection-item" data-animate="fade-up">
-                    <div class="collection-item__image">
-                         <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=800&auto=format&fit=crop" alt="Onyx Heavyweight Tee">
-                    </div>
-                    <div class="collection-item__info">
-                        <h3 class="collection-item__name">Onyx Heavyweight Tee</h3>
-                        <p class="collection-item__price">$55.00</p>
-                        <a href="#" class="btn btn--secondary">View Details</a>
-                    </div>
-                </div>
                  <div class="view-all-container" data-animate="fade-up">
                     <a href="#" class="btn btn--primary">Shop The Full Collection</a>
                 </div>
             </div>
         </section>
 
-        <section class="manifesto">
+        <section class="manifesto" id="philosophy">
             <div class="container" data-animate="fade-up">
+                <h3 class="manifesto__eyebrow">Our Philosophy</h3>
                 <p class="manifesto__text">
                     Engineered for the outliers. The ones who build, create, and refuse to stand still. This is more than apparel—it's an extension of your craft.
                 </p>
@@ -131,20 +135,20 @@
                     <div class="footer__links">
                         <a href="#">Support</a>
                         <a href="#">Returns</a>
-                        <a href="#">Terms</a>
+                        <a href="#">Terms of Service</a>
                     </div>
                     <div class="footer__socials">
                         <a href="#" aria-label="Instagram">IG</a>
                         <a href="#" aria-label="TikTok">TT</a>
                         <a href="#" aria-label="Twitter">X</a>
                     </div>
-                    <p class="footer__copyright">© 2025 Custom Dreamz</p>
+                    <p class="footer__copyright">© 2025 Custom Dreamz. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
 
     </main>
 
-    <script src="index_mobile.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
